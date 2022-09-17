@@ -6,7 +6,8 @@
   "scripts": {
     "p:studio": "prisma studio",
     "p:generate": "prisma generate",
-    "p:migrate": "prisma migrate dev"
+    "p:migrate": "prisma migrate dev",
+    "exec:file": "tsnd"
   },
   "keywords": [],
   "author": "",
