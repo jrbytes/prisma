@@ -14,7 +14,7 @@ model Courses {
   duration    Int
   createdAt   DateTime         @default(now())
   teacher     Teachers?        @relation(fields: [teachersId], references: [id])
-  teachersId  String           @default(uuid())
+  teachersId  String?          @default(uuid())
   modules     CoursesModules[]
 
   @@map("courses")

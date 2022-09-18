@@ -1,13 +1,14 @@
 import { PrismaClient } from '@prisma/client'
+import {faker} from '@faker-js/faker'
 
 const prisma = new PrismaClient()
 
 async function create() {
   const result = await prisma.courses.create({
     data: {
-      name: 'Prisma',
-      description: 'Prisma is a database toolkit',
-      duration: 200,
+      name: faker.hacker.noun(),
+      description: faker.hacker.phrase(),
+      duration: 100,
     }
   })
 
