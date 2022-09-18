@@ -3,7 +3,7 @@ import {faker} from '@faker-js/faker'
 
 const prisma = new PrismaClient()
 
-async function create() {
+async function createCourses() {
   const result = await prisma.courses.create({
     data: {
       name: faker.hacker.noun(),
@@ -15,4 +15,4 @@ async function create() {
   console.log(result)
 }
 
-create()
+createCourses()

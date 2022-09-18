@@ -3,8 +3,8 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = env("DATABASE_URL")
+  provider = "postgresql"
+  url      = env("DATABASE_URL_POSTGRES")
 }
 
 model Courses {
@@ -41,10 +41,10 @@ model Teachers {
 
 model CoursesModules {
   id        String   @id @default(uuid())
-  coursesId String?
-  Courses   Courses? @relation(fields: [coursesId], references: [id])
-  modulesId String?
-  Modules   Modules? @relation(fields: [modulesId], references: [id])
+  coursesId String
+  Courses   Courses  @relation(fields: [coursesId], references: [id])
+  modulesId String
+  Modules   Modules  @relation(fields: [modulesId], references: [id])
   createdAt DateTime @default(now())
 
   @@map("courses_modules")
